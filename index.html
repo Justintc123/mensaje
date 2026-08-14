@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para vos 🌹</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        background:
+            radial-gradient(circle at center, #24102d 0%, #09000d 45%, #020205 100%);
+
+        font-family: "Courier New", monospace;
+        color: #ff5cff;
+    }
+
+    /* brillo ambiental */
+    body::before {
+        content: "";
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        background: #ff1493;
+        filter: blur(140px);
+        opacity: 0.18;
+        border-radius: 50%;
+    }
+
+    .card {
+        position: relative;
+        text-align: center;
+        padding: 45px 35px;
+        border: 1px solid #ff3cac;
+        border-radius: 20px;
+
+        background: rgba(10, 0, 15, 0.65);
+        box-shadow:
+            0 0 15px #ff1493,
+            inset 0 0 20px rgba(255, 20, 147, 0.15);
+
+        animation: appear 1.5s ease;
+    }
+
+    .rose {
+        font-size: 85px;
+        margin-bottom: 20px;
+
+        filter:
+            drop-shadow(0 0 8px #ff1744)
+            drop-shadow(0 0 20px #ff1744);
+
+        animation: float 3s ease-in-out infinite;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: clamp(25px, 7vw, 48px);
+        letter-spacing: 3px;
+
+        color: #fff;
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #ff4fd8,
+            0 0 25px #ff1493;
+
+        animation: flicker 4s infinite;
+    }
+
+    .line {
+        width: 70%;
+        height: 1px;
+        margin: 25px auto;
+
+        background: #ff4fd8;
+        box-shadow: 0 0 10px #ff1493;
+    }
+
+    .small {
+        font-size: 12px;
+        color: #ff8de7;
+        letter-spacing: 4px;
+        opacity: 0.7;
+    }
+
+    /* líneas retro */
+    .scanlines {
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+
+        background: repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.025) 0px,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: scale(0.85);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes flicker {
+        0%, 95%, 100% {
+            opacity: 1;
+        }
+
+        96% {
+            opacity: 0.7;
+        }
+
+        97% {
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="rose">🌹</div>
+
+    <h1>para la más enanita</h1>
+
+    <div class="line"></div>
+
+    <div class="small">♡ hecho especialmente para vos ♡</div>
+
+</div>
+
+<div class="scanlines"></div>
+
+</body>
+</html>
